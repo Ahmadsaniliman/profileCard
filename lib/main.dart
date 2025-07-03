@@ -16,7 +16,15 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         useMaterial3: true,
       ),
-      home: const ProfileCardScreen(),
+      home: LayoutBuilder(
+        builder: (context, constraints) {
+          if (constraints.maxWidth > 600) {
+            return const ProfileCardScreen();
+          } else {
+            return const ProfileCardScreen();
+          }
+        },
+      ),
     );
   }
 }
